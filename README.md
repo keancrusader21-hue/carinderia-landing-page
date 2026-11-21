@@ -1,16 +1,21 @@
-# React + Vite
+# Aling Nena's Carinderia - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive landing page for a Filipino carinderia (small local eatery), built with React and Vite.
 
-Currently, two official plugins are available:
+**Live demo:** https://carinderia-landing-pagee.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Full-screen hero section with call-to-action
+- Menu section rendered from data (React `map`)
+- Contact section with click-to-call button
+- Responsive layout for desktop and mobile
 
-## React Compiler
+## Tech Used
+- React
+- Vite
+- CSS (Grid and Flexbox)
+- Deployed on Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run Locally
+npm install
+npm run dev
