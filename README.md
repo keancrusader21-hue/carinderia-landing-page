@@ -2,18 +2,20 @@
 
 A responsive landing page for a Filipino carinderia (small local eatery), built with React and Vite.
 
-**Live demo:** https://carinderia-landing-pagee.vercel.app/
+**Live demo:** https://carinderia-landing-pagee.vercel.app
 
 ## Features
+- Sticky navbar with smooth scrolling
 - Full-screen hero section with call-to-action
-- Menu section rendered from data (React `map`)
-- Contact section with click-to-call button
+- Menu with photos and category filters (React state)
+- About and customer reviews sections
+- Contact section with click-to-call, Messenger button, and Google Maps embed
+- Scroll fade-in animations (IntersectionObserver)
 - Responsive layout for desktop and mobile
 
 ## Tech Used
-- React
-- Vite
-- CSS (Grid and Flexbox)
+- React, Vite
+- CSS (Grid, Flexbox)
 - Deployed on Vercel
 
 ## Run Locally
