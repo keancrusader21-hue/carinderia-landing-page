@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import adobo from './assets/menu/adobo.jpg'
 import sinigang from './assets/menu/sinigang.jpg'
@@ -16,11 +16,31 @@ const menu = [
   { name: 'Kanin', price: 10, category: 'Extra', image: kanin },
 ]
 
+const reviews = [
+  { name: 'Maria S.', text: 'Sobrang sarap ng adobo at mura pa! Balik-balikan talaga.', stars: 5 },
+  { name: 'Juan D.', text: 'Mabilis ang serbisyo at laging mainit ang ulam.', stars: 5 },
+  { name: 'Ana R.', text: 'Paborito ko ang sinigang nila. Malinis at masarap.', stars: 4 },
+]
 const categories = ['Lahat', 'Ulam', 'Sabaw', 'Gulay', 'Extra']
 
 function App() {
   const [active, setActive] = useState('Lahat')
   const filtered = active === 'Lahat' ? menu : menu.filter((m) => m.category === active)
+    useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible')
+            observer.unobserve(e.target)
+          }
+        })
+      },
+      { threshold: 0.15 }
+    )
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
@@ -40,7 +60,15 @@ function App() {
         <a href="#menu" className="btn">Tingnan ang Menu</a>
       </header>
 
-          <section id="menu" className="menu">
+            <section id="about" className="about reveal">
+        <h2>Tungkol Sa Amin</h2>
+        <p>
+          Mula pa noong 2010, naghahain kami ng lutong-bahay na ulam sa abot-kayang presyo.
+          Sariwa ang sangkap at luto araw-araw, para pakiramdam mo ay kumakain ka sa bahay.
+        </p>
+      </section>
+
+          <section id="menu" className="menu reveal">
         <h2>Aming Menu</h2>
         <div className="filters">
           {categories.map((c) => (
@@ -64,8 +92,21 @@ function App() {
         </div>
       </section>
 
+            <section id="reviews" className="reviews reveal">
+        <h2>Sabi ng Aming Customers</h2>
+        <div className="reviews-grid">
+          {reviews.map((r) => (
+            <div key={r.name} className="review-card">
+              <div className="stars">{'★'.repeat(r.stars)}{'☆'.repeat(5 - r.stars)}</div>
+              <p>"{r.text}"</p>
+              <strong>{r.name}</strong>
+            </div>
+          ))}
+        </div>
+      </section>
 
-                <section id="contact" className="contact">
+
+                <section id="contact" className="contact reveal">
         <h2>Bisitahin Kami</h2>
         <p>📍 Purok 2-A, Salvacion, Trento, Agusan Del Sur</p>
         <p>🕖 Bukas: 6:00 AM - 8:00 PM, Lunes hanggang Linggo</p>
