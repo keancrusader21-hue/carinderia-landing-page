@@ -64,13 +64,33 @@ function App() {
         </div>
       </section>
 
-      
-            <section id="contact" className="contact">
+
+                <section id="contact" className="contact">
         <h2>Bisitahin Kami</h2>
-        <p>📍 Purok 1, Padada, Davao del Sur</p>
+        <p>📍 Purok 2-A, Salvacion, Trento, Agusan Del Sur</p>
         <p>🕖 Bukas: 6:00 AM - 8:00 PM, Lunes hanggang Linggo</p>
         <p>📞 0912 345 6789</p>
-        <a href="tel:+639123456789" className="btn">Tumawag Ngayon</a>
+
+        <div className="contact-buttons">
+          <a href="tel:+639123456789" className="btn">Tumawag Ngayon</a>
+          <a
+            href="https://www.facebook.com/kean.ide.73"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-messenger"
+          >
+            Message sa Messenger
+          </a>
+        </div>
+
+            <iframe
+          className="map"
+          title="Location map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d545.5179495365529!2d126.12286124521518!3d8.00953024467643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fc35790d320b4b%3A0x6a1801a27f1250df!2sSalvacion%2C%20Boston%2C%20Davao%20Oriental!5e0!3m2!1sen!2sph!4v1795257618147!5m2!1sen!2sph"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+        ></iframe>
       </section>
 
       <footer className="footer">
